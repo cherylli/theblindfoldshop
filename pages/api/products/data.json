@@ -1,0 +1,58 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Black Blindfold",
+      "color": ["black"],
+      "image": "bf1.jfif",
+      "category": ["Men", "Women"],
+      "sizes": ["L", "XL"],
+      "price": 17.4
+    },
+    {
+      "id": "2",
+      "name": "Rainbow Blindfold",
+      "color": ["red", "orange", "yellow", "green", "blue", "purple"],
+      "image": "bf2.jpg",
+      "category": ["kids"],
+      "sizes": ["S"],
+      "price": 13.5
+    },
+    {
+      "id": "3",
+      "name": "Purple Blindfold",
+      "color": ["purple"],
+      "image": "bf3.jpg",
+      "category": ["Women"],
+      "sizes": ["M"],
+      "price": 25.4
+    },
+    {
+      "id": "4",
+      "name": "Pink Blindfolds",
+      "color": ["pink"],
+      "image": "bf4.png",
+      "category": ["Women"],
+      "sizes": ["S"],
+      "price": 27.4
+    },
+    {
+      "id": "5",
+      "name": "Blindfolds of Skyrim",
+      "color": ["red"],
+      "image": "bf5.png",
+      "category": ["Men"],
+      "sizes": ["M", "L", "XL"],
+      "price": 34.8
+    },
+    {
+      "id": "6",
+      "name": "Rainbow Blindfolds",
+      "color": ["red", "orange", "yellow", "green", "blue", "purple"],
+      "image": "bf6.jpg",
+      "category": ["kids"],
+      "sizes": ["S"],
+      "price": 16.9
+    }
+  ]
+}
