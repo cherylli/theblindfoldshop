@@ -1,5 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 260px;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  margin: 20px;
+  padding: 20px;
+  font-size: 1.5rem;
+}
+
 .img_container {
   position: relative;
   width: 200px;
-  height: 300px;
+  height: 200px;
+}
+
+.add_to_cart_btn {
+  border: black 2px solid;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+
+.add_to_cart_btn:hover {
+  background-color: var(--bg-dark);
+  border: var(--bg-dark) 2px solid;
+  color: var(--text-on-dark);
 }

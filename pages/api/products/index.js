@@ -1,6 +1,6 @@
 const { products } = require('./data.json');
 
-export default (req, res) => {
+const ProductsAPI = (req, res) => {
   if (req.method === 'GET') {
     res.status(200).json(products);
   } else {
@@ -8,3 +8,5 @@ export default (req, res) => {
     res.status(405).json({ message: `Method ${req.method} is not allowed` });
   }
 };
+
+export default ProductsAPI;

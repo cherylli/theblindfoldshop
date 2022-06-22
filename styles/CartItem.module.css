@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 80%;
+  max-width: 1000px;
+  min-width: 400px;
+  margin: auto;
+}
+
+.container > * {
+  flex: 1;
+}
+
+.img_container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.quantity_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart_btn {
+  width: 30px;
+  height: 30px;
+}

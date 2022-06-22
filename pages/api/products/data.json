@@ -11,7 +11,7 @@
     },
     {
       "id": "2",
-      "name": "Rainbow Blindfold",
+      "name": "Rainbow Blindfolds",
       "color": ["red", "orange", "yellow", "green", "blue", "purple"],
       "image": "bf2.jpg",
       "category": ["kids"],
@@ -29,7 +29,7 @@
     },
     {
       "id": "4",
-      "name": "Pink Blindfolds",
+      "name": "Pink Blindfold",
       "color": ["pink"],
       "image": "bf4.png",
       "category": ["Women"],
@@ -38,7 +38,7 @@
     },
     {
       "id": "5",
-      "name": "Blindfolds of Skyrim",
+      "name": "Blindfold of Skyrim",
       "color": ["red"],
       "image": "bf5.png",
       "category": ["Men"],

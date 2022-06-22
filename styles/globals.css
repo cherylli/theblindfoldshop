@@ -1,3 +1,11 @@
+:root {
+  --bg-dark: #444;
+  --text-on-dark: #fff;
+
+  --white: #fff;
+  --black: #000;
+}
+
 html,
 body {
   padding: 0;
@@ -13,4 +21,17 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+  border: 2px solid var(--bg-dark);
+  font-weight: bold;
+  border-radius: 4px;
+  background-color: var(--white);
+}
+
+button:hover {
+  background-color: var(--bg-dark);
+  color: var(--white);
 }

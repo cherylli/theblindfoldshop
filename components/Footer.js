@@ -8,21 +8,25 @@ const Footer = () => {
         <div className={styles.footer_social_media}>
           <Image
             src="/images/socialmedia/icons8-facebook-40.png"
+            alt="Facebook Icon"
             width={40}
             height={40}
           />
           <Image
             src="/images/socialmedia/icons8-instagram-40.png"
+            alt="Instagram Icon"
             width={40}
             height={40}
           />
           <Image
             src="/images/socialmedia/icons8-twitter-40.png"
+            alt="Twitter Icon"
             width={40}
             height={40}
           />
           <Image
             src="/images/socialmedia/icons8-youtube-40.png"
+            alt="Youtube Icon"
             width={40}
             height={40}
           />

@@ -1,6 +1,6 @@
 const { products } = require('./data.json');
 
-export default (req, res) => {
+const ProductsByCategoryAPI = (req, res) => {
   const filteredProducts = products.filter((product) =>
     product.category.includes(req.query.category)
   );
@@ -12,3 +12,5 @@ export default (req, res) => {
     res.status(405).json({ message: `Method ${req.method} is not allowed` });
   }
 };
+
+export default ProductsByCategoryAPI;
