@@ -14,7 +14,7 @@
     A fictional blindfolds shop
 </p>
     <div>        
-        <a href="TODO: vercel link">View Demo</a>
+        <a href="https://theblindfoldshop.vercel.app/">View Demo</a>
         ·
         <a href="https://github.com/cherylli/theblindfoldshop/issues">Report Bug</a>
     </div>
@@ -95,6 +95,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 - [ ] Add Changelog
 - [ ] Set up env varibles
+- [ ] Pagination
 - [ ] Add a database/backend/headless CMS
   - [ ] product management
   - [ ] user/admin accounts
