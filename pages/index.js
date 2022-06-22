@@ -1,5 +1,6 @@
 import ProductCard from '@/components/ProductCard';
 import styles from '../styles/Home.module.css';
+import { getAllProducts } from './api/products';
 
 export default function Home({ products }) {
   return (
@@ -16,8 +17,10 @@ export default function Home({ products }) {
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch(`http://localhost:3000/api/products`);
-  const products = await res.json();
+  //const res = await fetch(`http://localhost:3001/api/products`);
+  //const products = await res.json();
+
+  const products = getAllProducts();
 
   return {
     props: { products },
