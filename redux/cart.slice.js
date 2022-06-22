@@ -9,11 +9,9 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action) => {
-      console.log(state, action.payload);
       const productFound = state.products.find(
         (product) => product.id === action.payload.id
       );
-      console.log('product found?', productFound);
       if (productFound) {
         productFound.quantity++;
       } else {

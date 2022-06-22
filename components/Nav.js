@@ -16,9 +16,6 @@ const Nav = () => {
         </Link>
       </div>
       <ul className={styles.nav_ul}>
-        <li>Men</li>
-        <li>Women</li>
-        <li>Kids</li>
         <li>
           <Link href="/cart">🛒Cart</Link>
         </li>

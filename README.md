@@ -95,7 +95,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 - [ ] Add Changelog
 - [ ] Set up env varibles
+- [ ] Individual product page
 - [ ] Pagination
+- [ ] Product filter
 - [ ] Add a database/backend/headless CMS
   - [ ] product management
   - [ ] user/admin accounts

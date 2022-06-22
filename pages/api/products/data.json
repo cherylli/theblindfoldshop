@@ -5,7 +5,7 @@
       "name": "Black Blindfold",
       "color": ["black"],
       "image": "bf1.jfif",
-      "category": ["Men", "Women"],
+      "category": ["men", "women"],
       "sizes": ["L", "XL"],
       "price": 17.4
     },
@@ -23,7 +23,7 @@
       "name": "Purple Blindfold",
       "color": ["purple"],
       "image": "bf3.jpg",
-      "category": ["Women"],
+      "category": ["women"],
       "sizes": ["M"],
       "price": 25.4
     },
@@ -32,7 +32,7 @@
       "name": "Pink Blindfold",
       "color": ["pink"],
       "image": "bf4.png",
-      "category": ["Women"],
+      "category": ["women"],
       "sizes": ["S"],
       "price": 27.4
     },
@@ -41,7 +41,7 @@
       "name": "Blindfold of Skyrim",
       "color": ["red"],
       "image": "bf5.png",
-      "category": ["Men"],
+      "category": ["men"],
       "sizes": ["M", "L", "XL"],
       "price": 34.8
     },
