@@ -94,6 +94,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Roadmap
 
 - [ ] Add Changelog
+- [ ] Set up env varibles
 - [ ] Add a database/backend/headless CMS
   - [ ] product management
   - [ ] user/admin accounts
