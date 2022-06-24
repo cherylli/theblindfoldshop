@@ -32,14 +32,12 @@ const CartPage = () => {
           <a onClick={() => dispatch(clearCart())}>Checkout</a>
         </Link>
       </button>
-      {/*
-        <button
+      <button
         className={styles.checkout_btn}
         onClick={() => dispatch(clearCart())}
       >
         Clear cart
       </button>
-        */}
     </div>
   );
 };
