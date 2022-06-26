@@ -1,10 +1,25 @@
 import ProductCard from '@/components/ProductCard';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import styles from '../styles/Home.module.css';
 import { getAllProducts } from './api/products';
+import LogRocket from 'logrocket';
+import { populateProducts } from 'redux/products.slice';
 
 export default function Home({ products }) {
+  LogRocket.init('f5mjid/theblindfoldshop-dev');
+
   const [filter, setFilter] = useState([]);
+  const dispatch = useDispatch();
+  const productsFromState = useSelector((state) => state.products.products);
+
+  useEffect(() => {
+    // load products into states
+    console.log(products);
+    if (productsFromState.length === 0) {
+      dispatch(populateProducts(products));
+    }
+  }, []);
 
   const handleFilterChange = (e) => {
     const { value, checked } = e.target;
@@ -22,7 +37,7 @@ export default function Home({ products }) {
       .forEach((el) => (el.checked = false));
   };
 
-  let filteredProducts = products;
+  let filteredProducts = productsFromState;
   if (filter.length !== 0) {
     filteredProducts = products.filter((product) =>
       filter.some((f) => product.categories.includes(f))
@@ -64,7 +79,14 @@ export default function Home({ products }) {
         <button onClick={handleClearFilter}>Clear</button>
       </div>
       <div className={styles.products_container}>
-        {filteredProducts.length === 0 && <div>No Product found.</div>}
+        {filteredProducts.length === 0 && (
+          <div>
+            <p>No Product found.</p>
+            <button onClick={() => dispatch(populateProducts(products))}>
+              Reset Products
+            </button>
+          </div>
+        )}
         {filteredProducts.map((product) => (
           <ProductCard product={product} key={product.id} />
         ))}

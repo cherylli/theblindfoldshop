@@ -58,6 +58,7 @@ This is a website I built for my 6 year old son who is obssessed with blindfolds
 
 - [Next.js](https://nextjs.org/)
 - [Redux Toolkit](https://redux-toolkit.js.org/)
+- [Strapi]
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -74,6 +75,9 @@ yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+Varibles
+`isUsingLocalJsonData` in `config/index.js` - change this to true to use local json data
 
 ### Prerequisites
 
@@ -97,11 +101,11 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [ ] Set up env varibles
 - [ ] Individual product page
 - [ ] Pagination
-- [ ] Product filter
+- [ ] Product Images to be generated randomly when adding new products using json.data
 - [ ] Add a database/backend/headless CMS
   - [ ] product management
   - [ ] user/admin accounts
-- [ ] Filter by categories
+- [x] Filter by categories
 - [ ] Better checkout process
 
 <p align="right">(<a href="#top">back to top</a>)</p>

@@ -4,6 +4,7 @@ import { addToCart } from 'redux/cart.slice';
 import styles from '@/styles/ProductCard.module.css';
 import { formatMoney } from '@/utils/formatMoney';
 import { isUsingLocalJsonData } from '../config';
+import { deleteProduct } from 'redux/products.slice';
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
@@ -14,6 +15,9 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className={styles.container}>
+      <button onClick={() => dispatch(deleteProduct(product))}>
+        DeleteItem
+      </button>
       <div className={styles.img_container}>
         <Image
           src={imagePath}

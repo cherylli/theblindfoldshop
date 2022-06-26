@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styles from '@/styles/Nav.module.css';
 import Link from 'next/link';
+import { isAdmin } from '../config';
 
 const Nav = () => {
   return (
@@ -17,6 +18,7 @@ const Nav = () => {
       </div>
       <ul className={styles.nav_ul}>
         <li>
+          {isAdmin && <Link href="/admin/addProduct">Add Products</Link>}
           <Link href="/cart">🛒Cart</Link>
         </li>
       </ul>
