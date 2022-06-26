@@ -2,7 +2,7 @@ const { products } = require('./data.json');
 
 const ProductsByCategoryAPI = (req, res) => {
   const filteredProducts = products.filter((product) =>
-    product.category.includes(req.query.category)
+    product.categories.includes(req.query.category)
   );
 
   if (req.method === 'GET') {

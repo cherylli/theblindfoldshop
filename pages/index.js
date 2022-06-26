@@ -25,7 +25,7 @@ export default function Home({ products }) {
   let filteredProducts = products;
   if (filter.length !== 0) {
     filteredProducts = products.filter((product) =>
-      filter.some((f) => product.category.includes(f))
+      filter.some((f) => product.categories.includes(f))
     );
   }
 
@@ -77,7 +77,7 @@ export const getStaticProps = async () => {
   //const res = await fetch(`http://localhost:3001/api/products`);
   //const products = await res.json();
 
-  const products = getAllProducts();
+  const products = await getAllProducts();
 
   return {
     props: { products },
