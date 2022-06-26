@@ -10,7 +10,7 @@ const ProductListPage = () => {
   return (
     <div className={styles.container}>
       {productsFromState?.map((product) => (
-        <ProductListItem product={product} />
+        <ProductListItem product={product} key={product.id} />
       ))}
       {/*This is for playmode*/}
       {/*TODO: a bug here when "Reset Products" is clicked"*/}

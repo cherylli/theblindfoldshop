@@ -19,7 +19,7 @@ export default function Home({ products }) {
     if (productsFromState.length === 0) {
       dispatch(populateProducts(products));
     }
-  }, []);
+  }, [dispatch, products, productsFromState.length]);
 
   const handleFilterChange = (e) => {
     const { value, checked } = e.target;
