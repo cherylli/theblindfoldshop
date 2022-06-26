@@ -15,9 +15,6 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className={styles.container}>
-      <button onClick={() => dispatch(deleteProduct(product))}>
-        DeleteItem
-      </button>
       <div className={styles.img_container}>
         <Image
           src={imagePath}

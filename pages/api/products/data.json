@@ -54,5 +54,6 @@
       "sizes": ["S"],
       "price": 16.9
     }
-  ]
+  ],
+  "images": ["bf1.jfif", "bf2.jpg", "bf3.jpg", "bf4.png", "bf5.png", "bf6.jpg"]
 }

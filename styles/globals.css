@@ -4,6 +4,8 @@
 
   --white: #fff;
   --black: #000;
+  --danger: rgb(173, 0, 0);
+  --danger-dark: rgb(117, 6, 6);
 }
 
 html,

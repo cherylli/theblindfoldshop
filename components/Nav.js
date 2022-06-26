@@ -17,8 +17,17 @@ const Nav = () => {
         </Link>
       </div>
       <ul className={styles.nav_ul}>
+        {isAdmin && (
+          <>
+            <li>
+              <Link href="/admin/add-product">Add Products</Link>
+            </li>
+            <li>
+              <Link href="/admin/product-list">Edit Products</Link>
+            </li>
+          </>
+        )}
         <li>
-          {isAdmin && <Link href="/admin/addProduct">Add Products</Link>}
           <Link href="/cart">🛒Cart</Link>
         </li>
       </ul>

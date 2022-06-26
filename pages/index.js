@@ -82,6 +82,7 @@ export default function Home({ products }) {
         {filteredProducts.length === 0 && (
           <div>
             <p>No Product found.</p>
+            {/*This is for playmode*/}
             <button onClick={() => dispatch(populateProducts(products))}>
               Reset Products
             </button>

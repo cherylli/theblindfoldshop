@@ -107,6 +107,7 @@ Varibles
   - [ ] user/admin accounts
 - [x] Filter by categories
 - [ ] Better checkout process
+- [ ] Remove items from cart when the product is deleted
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
