@@ -20,10 +20,10 @@ const Nav = () => {
         {isAdmin && (
           <>
             <li>
-              <Link href="/admin/add-product">Add Products</Link>
+              <Link href="/admin/add-product">➕Add Blindfolds</Link>
             </li>
             <li>
-              <Link href="/admin/product-list">Edit Products</Link>
+              <Link href="/admin/product-list">🖊️Edit Blindfolds</Link>
             </li>
           </>
         )}

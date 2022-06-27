@@ -1,10 +1,19 @@
 import Image from 'next/image';
 import styles from '@/styles/ProductListItem.module.css';
-import { formatMoney } from '@/utils/formatMoney';
-import { deleteProduct } from 'redux/products.slice';
+import { deleteProduct, editProduct } from 'redux/products.slice';
 import { useDispatch } from 'react-redux';
+import { useState } from 'react';
 
 const ProductListItem = ({ product }) => {
+  const [name, setName] = useState(product.name);
+  const [price, setPrice] = useState(product.price);
+
+  const handlePriceChange = (value) => {
+    if (Number(value) > 0 && Number(value) <= 2000) {
+      setPrice(value);
+    }
+  };
+
   const dispatch = useDispatch();
   return (
     <div className={styles.container}>
@@ -16,14 +25,23 @@ const ProductListItem = ({ product }) => {
           layout="fill"
         />
       </div>
-      <div>{product.name}</div>
-      <div>{formatMoney(product.price)}</div>
-      <div>
+      <input value={name} onChange={(e) => setName(e.target.value)} />
+      <input
+        value={price}
+        onChange={(e) => handlePriceChange(e.target.value)}
+      />
+      <div className={styles.action_btn_container}>
+        <button
+          className={styles.save_btn}
+          onClick={() => dispatch(editProduct({ id: product.id, name, price }))}
+        >
+          Save
+        </button>
         <button
           className={styles.delete_btn}
           onClick={() => dispatch(deleteProduct(product))}
         >
-          Delete Item
+          Delete
         </button>
       </div>
     </div>

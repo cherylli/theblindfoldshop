@@ -12,12 +12,6 @@ const ProductListPage = () => {
       {productsFromState?.map((product) => (
         <ProductListItem product={product} key={product.id} />
       ))}
-      {/*This is for playmode*/}
-      {/*TODO: a bug here when "Reset Products" is clicked"*/}
-      {/* TODO: buggy
-      <button onClick={() => dispatch(populateProducts())}>
-        Reset Products
-      </button>*/}
     </div>
   );
 };

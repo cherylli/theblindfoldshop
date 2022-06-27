@@ -6,6 +6,8 @@
   --black: #000;
   --danger: rgb(173, 0, 0);
   --danger-dark: rgb(117, 6, 6);
+  --success: rgb(0, 173, 0);
+  --success-dark: rgb(0, 117, 6);
 }
 
 html,

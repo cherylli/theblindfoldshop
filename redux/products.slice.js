@@ -15,6 +15,20 @@ const productsSlice = createSlice({
     addProduct: (state, action) => {
       state.products.push(action.payload);
     },
+    editProduct: (state, action) => {
+      console.log(action.payload.id);
+      state.products = state.products.map((product) => {
+        if (product.id === action.payload.id) {
+          console.log(action.payload.name);
+          return {
+            ...product,
+            name: action.payload.name,
+            price: action.payload.price,
+          };
+        }
+        return product;
+      });
+    },
     deleteProduct: (state, action) => {
       if (state.products.length === 1) {
         state.products = [];
@@ -30,5 +44,5 @@ const productsSlice = createSlice({
 
 export const productsReducer = productsSlice.reducer;
 
-export const { populateProducts, addProduct, deleteProduct } =
+export const { populateProducts, addProduct, editProduct, deleteProduct } =
   productsSlice.actions;

@@ -26,6 +26,13 @@
   gap: 10px;
 }
 
+.action_btn_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
 .delete_btn {
   background-color: var(--danger);
   color: var(--white);
@@ -36,4 +43,16 @@
 .delete_btn:hover {
   border-color: var(--danger-dark);
   background-color: var(--danger-dark);
+}
+
+.save_btn {
+  background-color: var(--success);
+  color: var(--white);
+  border-color: var(--success);
+  padding: 5px 10px;
+}
+
+.save_btn:hover {
+  border-color: var(--success-dark);
+  background-color: var(--success-dark);
 }
