@@ -10,7 +10,7 @@ const AddProductPage = () => {
   const router = useRouter();
   const randomImages = data.images;
 
-  const handleAddProduct = (name, price) => {
+  const handleAddProduct = ({ name, price }) => {
     dispatch(
       addProduct({
         id: Math.floor(Math.random() * 100000).toString(),

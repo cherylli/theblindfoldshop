@@ -5,3 +5,4 @@ https://github.com/vercel/next.js/discussions/13648
 ## formik
 
 https://blog.logrocket.com/building-forms-formik-react/
+[Formik for Beginners](https://www.codedaily.io/courses/Formik-for-Beginners)

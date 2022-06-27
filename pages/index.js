@@ -15,7 +15,7 @@ export default function Home({ products }) {
 
   useEffect(() => {
     // load products into states
-    console.log(products);
+
     if (productsFromState.length === 0) {
       dispatch(populateProducts(products));
     }

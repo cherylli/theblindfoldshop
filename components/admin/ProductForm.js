@@ -1,6 +1,19 @@
-import { Formik } from 'formik';
+import { ErrorMessage, Field, Form, Formik } from 'formik';
 import styles from '@/styles/ProductForm.module.css';
 import { useState } from 'react';
+
+const validate = (values) => {
+  const errors = {};
+  if (!values.name) {
+    errors.name = 'Required';
+  } else if (values.name.length > 100) {
+    errors.name = 'Must be 100 characters or less';
+  }
+  if (!values.price) {
+    errors.price = 'Required';
+  }
+  return errors;
+};
 
 const ProductForm = ({ handleSubmit }) => {
   const [name, setName] = useState('');
@@ -15,33 +28,42 @@ const ProductForm = ({ handleSubmit }) => {
   return (
     <div className={styles.container}>
       <h1>Add A Blindfold</h1>
-      <div className={styles.container}>
-        <form>
-          <fieldset className={styles.fset}>
-            <label>
-              <p>Name</p>
-              <input
+
+      <Formik
+        initialValues={{ name, price }}
+        validate={validate}
+        onSubmit={(values) =>
+          handleSubmit({
+            name: values.name,
+            price: values.price,
+          })
+        }
+      >
+        {() => (
+          <Form className={styles.form_container}>
+            <fieldset className={styles.fset}>
+              <label htmlFor="name">Name</label>
+              <Field id="name" name="name" />
+              <ErrorMessage
+                component="div"
                 name="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                className={styles.feedback_invalid}
               />
-            </label>
-          </fieldset>
-          <fieldset className={styles.fset}>
-            <label>
-              <p>Price ($1-$2000)</p>
-              <input
-                type="number"
-                value={price}
-                max="1000"
-                onChange={(e) => handlePriceChange(e.target.value)}
+            </fieldset>
+            <fieldset className={styles.fset}>
+              <label htmlFor="price">Price</label>
+              <Field id="price" name="price" />
+              <ErrorMessage
+                component="div"
                 name="price"
+                className={styles.feedback_invalid}
               />
-            </label>
-          </fieldset>
-        </form>
-        <button onClick={() => handleSubmit(name, price)}>Add</button>
-      </div>
+            </fieldset>
+
+            <button type="submit">Submit</button>
+          </Form>
+        )}
+      </Formik>
     </div>
   );
 };
