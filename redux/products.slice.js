@@ -16,10 +16,8 @@ const productsSlice = createSlice({
       state.products.push(action.payload);
     },
     editProduct: (state, action) => {
-      console.log(action.payload.id);
       state.products = state.products.map((product) => {
         if (product.id === action.payload.id) {
-          console.log(action.payload.name);
           return {
             ...product,
             name: action.payload.name,

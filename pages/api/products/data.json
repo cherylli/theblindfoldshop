@@ -55,5 +55,20 @@
       "price": 16.9
     }
   ],
-  "images": ["bf1.jfif", "bf2.jpg", "bf3.jpg", "bf4.png", "bf5.png", "bf6.jpg"]
+  "images": ["bf1.jfif", "bf2.jpg", "bf3.jpg", "bf4.png", "bf5.png", "bf6.jpg"],
+  "allSizes": ["XXS", "XS", "S", "M", "L", "XL", "XXL", "XXXL", "XXXXL"],
+  "allColors": [
+    "Red",
+    "Orange",
+    "Yellow",
+    "Green",
+    "Cyan",
+    "Blue",
+    "Magenta",
+    "Purple",
+    "Pink",
+    "Black",
+    "White"
+  ],
+  "allCategories": ["men", "women", "kids"]
 }

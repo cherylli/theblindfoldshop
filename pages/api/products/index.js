@@ -33,12 +33,16 @@ export const getAllProducts = async () => {
   }
 };
 
-const ProductsAPI = (req, res) => {
-  if (req.method === 'GET') {
-    res.status(200).json(products);
-  } else {
-    res.setHeader('Allow', ['GET']);
-    res.status(405).json({ message: `Method ${req.method} is not allowed` });
+const ProductsAPI = async (req, res) => {
+  try {
+    if (req.method === 'GET') {
+      res.status(200).json(await getAllProducts());
+    } else {
+      res.setHeader('Allow', ['GET']);
+      res.status(405).json({ message: `Method ${req.method} is not allowed` });
+    }
+  } catch {
+    res.status(500).json({ message: 'Something went wrong' });
   }
 };
 

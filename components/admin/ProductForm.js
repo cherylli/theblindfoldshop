@@ -1,6 +1,9 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import styles from '@/styles/ProductForm.module.css';
-import { useState } from 'react';
+import * as Yup from 'yup';
+import MultiSelectField from './MultiSelectField';
+import { arrayToSelectOptions } from '@/utils/arrayToSelectOptions';
+import Select from 'react-select';
 
 const validate = (values) => {
   const errors = {};
@@ -15,29 +18,38 @@ const validate = (values) => {
   return errors;
 };
 
-const ProductForm = ({ handleSubmit }) => {
-  const [name, setName] = useState('');
-  const [price, setPrice] = useState(1);
+const ValidationSchema = Yup.object().shape({
+  name: Yup.string()
+    .max(100, 'Must be 100 characters or less.')
+    .required('Required'),
 
-  const handlePriceChange = (value) => {
-    if (Number(value) > 0 && Number(value) <= 2000) {
-      setPrice(value);
-    }
-  };
+  price: Yup.number()
+    .min(0.01, 'Must be greater than $0.01')
+    .max(2000, 'Must be less than $2000')
+    .required('Required'),
+});
+
+const ProductForm = ({ handleSubmit }) => {
+  const options = [
+    { value: 'chocolate', label: 'Chocolate' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' },
+  ];
 
   return (
     <div className={styles.container}>
       <h1>Add A Blindfold</h1>
 
       <Formik
-        initialValues={{ name, price }}
-        validate={validate}
-        onSubmit={(values) =>
+        initialValues={{ name: '', price: 1, dessert: '' }}
+        validationSchema={ValidationSchema}
+        onSubmit={(values) => {
+          console.log(values);
           handleSubmit({
             name: values.name,
             price: values.price,
-          })
-        }
+          });
+        }}
       >
         {() => (
           <Form className={styles.form_container}>
@@ -58,6 +70,9 @@ const ProductForm = ({ handleSubmit }) => {
                 name="price"
                 className={styles.feedback_invalid}
               />
+            </fieldset>
+            <fieldset className={styles.fset}>
+              <MultiSelectField options={options} />
             </fieldset>
 
             <button type="submit">Submit</button>
