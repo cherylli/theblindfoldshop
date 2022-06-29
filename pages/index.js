@@ -12,6 +12,7 @@ export default function Home({ products }) {
   const [filter, setFilter] = useState([]);
   const dispatch = useDispatch();
   const productsFromState = useSelector((state) => state.products.products);
+  console.log('products from state', productsFromState);
 
   useEffect(() => {
     // load products into states
@@ -38,11 +39,14 @@ export default function Home({ products }) {
   };
 
   let filteredProducts = productsFromState;
+  console.log('filtered products', filteredProducts);
+
   if (filter.length !== 0) {
-    filteredProducts = products.filter((product) =>
+    filteredProducts = productsFromState.filter((product) =>
       filter.some((f) => product.categories.includes(f))
     );
   }
+  console.log('filtered products', filteredProducts);
 
   return (
     <div className={styles.container}>

@@ -4,6 +4,8 @@
 
   --white: #fff;
   --black: #000;
+  --mid-gray: #666;
+  --light-gray: #ccc;
   --danger: rgb(173, 0, 0);
   --danger-dark: rgb(117, 6, 6);
   --success: rgb(0, 173, 0);
@@ -14,8 +16,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
 }
 
 a {

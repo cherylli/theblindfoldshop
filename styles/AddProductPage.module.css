@@ -2,5 +2,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 50px;
+  width: 80%;
+  max-width: 1000px;
+  margin: 20px auto;
+  padding-bottom: 40px;
+  gap: 20px;
+}
+
+.title {
+  width: 400px;
+  text-align: left;
 }

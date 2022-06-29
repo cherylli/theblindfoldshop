@@ -8,12 +8,15 @@ const Nav = () => {
     <div className={styles.nav_container}>
       <div className={styles.logo_container}>
         <Link href="/">
-          <Image
-            src="/images/logo.png"
-            alt="logo"
-            layout="fill"
-            objectFit="contain"
-          />
+          <a>
+            <Image
+              src="/images/logo.png"
+              alt="logo"
+              layout="fill"
+              objectFit="contain"
+              priority
+            />
+          </a>
         </Link>
       </div>
       <ul className={styles.nav_ul}>

@@ -3,6 +3,7 @@ import { API_URL, isUsingLocalJsonData } from '@/config/index';
 
 export const getAllCategories = async () => {
   if (isUsingLocalJsonData) return allCategories;
+  //TODO: else return from strapi
 };
 
 const AllProductCategoriesAPI = async (req, res) => {

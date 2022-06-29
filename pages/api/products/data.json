@@ -3,7 +3,7 @@
     {
       "id": "1",
       "name": "Black Blindfold",
-      "color": ["black"],
+      "colors": ["black"],
       "image": "bf1.jfif",
       "categories": ["men", "women"],
       "sizes": ["L", "XL"],
@@ -12,7 +12,7 @@
     {
       "id": "2",
       "name": "Rainbow Blindfolds",
-      "color": ["red", "orange", "yellow", "green", "blue", "purple"],
+      "colors": ["red", "orange", "yellow", "green", "blue", "purple"],
       "image": "bf2.jpg",
       "categories": ["kids"],
       "sizes": ["S"],
@@ -21,7 +21,7 @@
     {
       "id": "3",
       "name": "Purple Blindfold",
-      "color": ["purple"],
+      "colors": ["purple"],
       "image": "bf3.jpg",
       "categories": ["women"],
       "sizes": ["M"],
@@ -30,7 +30,7 @@
     {
       "id": "4",
       "name": "Pink Blindfold",
-      "color": ["pink"],
+      "colors": ["pink"],
       "image": "bf4.png",
       "categories": ["women"],
       "sizes": ["S"],
@@ -39,7 +39,7 @@
     {
       "id": "5",
       "name": "Blindfold of Skyrim",
-      "color": ["red"],
+      "colors": ["red"],
       "image": "bf5.png",
       "categories": ["men"],
       "sizes": ["M", "L", "XL"],
@@ -48,7 +48,7 @@
     {
       "id": "6",
       "name": "Rainbow Blindfolds",
-      "color": ["red", "orange", "yellow", "green", "blue", "purple"],
+      "colors": ["red", "orange", "yellow", "green", "blue", "purple"],
       "image": "bf6.jpg",
       "categories": ["kids"],
       "sizes": ["S"],
