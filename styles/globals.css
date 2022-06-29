@@ -6,7 +6,7 @@
   --black: #000;
   --mid-gray: #666;
   --light-gray: #ccc;
-  --bg-color: #f6dfd4;
+  --accent-light: #f6dfd4;
   --accent: #e08a5f;
   --emphasis: #3ba55e;
   --danger: rgb(173, 0, 0);
@@ -45,5 +45,6 @@ button {
 
 button:hover {
   background-color: var(--accent);
-  color: var(--white);
+  border: 2px solid var(--black);
+  color: var(--black);
 }

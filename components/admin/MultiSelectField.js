@@ -1,7 +1,7 @@
 import Select from 'react-select';
 import styles from '@/styles/MultiSelectField.module.css';
 
-const MultiSelectField = ({ options, form, field }) => {
+const MultiSelectField = ({ options, form, field, defaultValue }) => {
   const onChange = (options) => {
     form.setFieldValue(
       field.name,
@@ -28,6 +28,7 @@ const MultiSelectField = ({ options, form, field }) => {
       isMulti
       value={getValue()}
       options={options}
+      defaultValue={defaultValue ? defaultValue : []}
       onChange={onChange}
     />
   );

@@ -3,7 +3,6 @@ import styles from '@/styles/ProductForm.module.css';
 import * as Yup from 'yup';
 import MultiSelectField from './MultiSelectField';
 import { arrayToSelectOptions } from '@/utils/arrayToSelectOptions';
-import Select from 'react-select';
 import { getAllCategories } from 'pages/api/products/properties/categories';
 import { useEffect, useState } from 'react';
 import { getAllSizes } from 'pages/api/products/properties/sizes';

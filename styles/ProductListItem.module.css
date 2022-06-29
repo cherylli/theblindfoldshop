@@ -7,10 +7,27 @@
   max-width: 1000px;
   min-width: 400px;
   margin: auto;
+  padding: 20px;
+  border-radius: 20px;
+  border: 2px solid var(--white);
 }
 
-.container > * {
-  flex: 1;
+.container:hover {
+  border: 2px solid var(--accent-light);
+}
+
+.expanded_container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px 60px;
+  margin: 20px 0;
+  border-radius: 20px;
+  border: 2px solid var(--accent-light);
+}
+
+.close_btn {
+  padding: 5px 10px;
 }
 
 .input {
@@ -26,6 +43,16 @@
   position: relative;
   width: 100px;
   height: 100px;
+  min-width: 100px;
+}
+
+.product_name {
+  flex: 1;
+  text-align: left;
+  padding-left: 20px;
+  font-size: 1.2rem;
+  word-wrap: break-word;
+  max-width: 50%;
 }
 
 .quantity_container {
@@ -43,25 +70,17 @@
 }
 
 .delete_btn {
-  background-color: var(--danger);
-  color: var(--white);
+  color: var(--danger);
   border-color: var(--danger);
   padding: 5px 10px;
 }
 
 .delete_btn:hover {
+  color: var(--white);
   border-color: var(--danger-dark);
   background-color: var(--danger-dark);
 }
 
 .save_btn {
-  background-color: var(--success);
-  color: var(--white);
-  border-color: var(--success);
   padding: 5px 10px;
-}
-
-.save_btn:hover {
-  border-color: var(--success-dark);
-  background-color: var(--success-dark);
 }

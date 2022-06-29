@@ -24,7 +24,7 @@ const ProductCard = ({ product }) => {
         />
       </div>
 
-      <div>{formatMoney(product.price)}</div>
+      <div className={styles.price}>{formatMoney(product.price)}</div>
       <div
         className={styles.add_to_cart_btn}
         onClick={() => dispatch(addToCart(product))}

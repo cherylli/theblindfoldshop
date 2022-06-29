@@ -25,6 +25,10 @@
   z-index: 1;
 }
 
+.price {
+  color: var(--accent);
+}
+
 .add_to_cart_btn {
   border: var(--accent) 2px solid;
   color: var(--accent);
