@@ -50,7 +50,10 @@ export default function Home({ products }) {
 
   return (
     <div className={styles.container}>
-      <h2>The best blindfolds in the universe</h2>
+      <h2 className={styles.title}>
+        The best <span className={styles.emphasis}>blindfolds</span> in the
+        universe
+      </h2>
       <div className={styles.filter}>
         {/*TODO: generate these dynamically based on the data */}
         <div>
@@ -80,7 +83,9 @@ export default function Home({ products }) {
           />
           <label htmlFor="filter-kids">Kids</label>
         </div>
-        <button onClick={handleClearFilter}>Clear</button>
+        <button className={styles.clear_btn} onClick={handleClearFilter}>
+          Clear
+        </button>
       </div>
       <div className={styles.products_container}>
         {filteredProducts.length === 0 && (

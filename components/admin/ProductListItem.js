@@ -25,8 +25,13 @@ const ProductListItem = ({ product }) => {
           layout="fill"
         />
       </div>
-      <input value={name} onChange={(e) => setName(e.target.value)} />
       <input
+        className={styles.input}
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+      <input
+        className={styles.input}
         value={price}
         onChange={(e) => handlePriceChange(e.target.value)}
       />

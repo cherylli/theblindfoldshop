@@ -19,13 +19,15 @@
 
 .product_name {
   height: 50px;
-  font-size: 0.9rem;
-  font-weight: bold;
+  font-size: 1.2rem;
   text-align: center;
+  word-wrap: break-word;
+  z-index: 1;
 }
 
 .add_to_cart_btn {
-  border: black 2px solid;
+  border: var(--accent) 2px solid;
+  color: var(--accent);
   border-radius: 5px;
   padding: 5px;
   font-size: 1rem;
@@ -35,7 +37,7 @@
 }
 
 .add_to_cart_btn:hover {
-  background-color: var(--bg-dark);
+  background-color: var(--accent);
   border: var(--bg-dark) 2px solid;
-  color: var(--text-on-dark);
+  color: var(--bg-dark);
 }

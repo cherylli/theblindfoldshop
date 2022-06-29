@@ -1,7 +1,11 @@
 .container {
   display: flex;
   flex-direction: column;
-  padding: 0 2rem;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  max-width: 1000px;
+  padding: 0px 0px 40px 0px;
 }
 
 .main {
@@ -14,10 +18,36 @@
   align-items: center;
 }
 
+.title {
+  align-self: flex-start;
+  font-weight: 200;
+  font-size: 2.5rem;
+  color: var(--accent);
+}
+
+.emphasis {
+  font-style: italic;
+  font-weight: bold;
+  color: var(--emphasis);
+}
+
 .filter {
   align-self: center;
   display: flex;
+  align-items: center;
+  font-size: 1.5rem;
   gap: 20px;
+}
+
+.filter > div {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.clear_btn {
+  font-size: 1rem;
+  padding: 5px 15px;
 }
 
 .products_container {

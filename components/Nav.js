@@ -19,6 +19,7 @@ const Nav = () => {
           </a>
         </Link>
       </div>
+      <div>{`<-- need new logo`} </div>
       <ul className={styles.nav_ul}>
         {isAdmin && (
           <>

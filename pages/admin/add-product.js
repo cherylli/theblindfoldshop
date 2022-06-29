@@ -15,11 +15,11 @@ const AddProductPage = () => {
       addProduct({
         id: Math.floor(Math.random() * 100000).toString(),
         name: name === '' ? 'New Blindfold' : name,
+        price: price === '' ? 20.0 : price,
         colors: colors ? colors : [],
         image: randomImages[Math.floor(Math.random() * randomImages.length)],
         categories: categories ? categories : [],
         sizes: sizes ? sizes : [],
-        price: price === '' ? 20.0 : price,
       })
     );
     router.push('/');
