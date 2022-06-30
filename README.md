@@ -108,6 +108,7 @@ Varibles
 - [x] Filter by categories
 - [ ] Better checkout process
 - [ ] Remove items from cart when the product is deleted
+- [ ] Add mobile layout
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

@@ -6,6 +6,7 @@ import { useState } from 'react';
 import ProductForm from './ProductForm';
 
 const ProductListItem = ({ product }) => {
+  const dispatch = useDispatch();
   const CollapsedView = () => {
     return (
       <div className={styles.container}>
@@ -21,7 +22,7 @@ const ProductListItem = ({ product }) => {
         <div className={styles.action_btn_container}>
           <button
             className={styles.save_btn}
-            onClick={() => setIsExpanded(!isExpanded)}
+            onClick={() => setIsExpanded((prev) => !prev)}
           >
             Edit
           </button>
@@ -37,15 +38,39 @@ const ProductListItem = ({ product }) => {
   };
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const dispatch = useDispatch();
+  const handleEditItem = ({ name, price, sizes, categories, colors }) => {
+    // if sizes or other multiselect fields are undefined that means it's not changed,
+    // set it to the original value
+    const updatedSizes = sizes === undefined ? product.sizes : sizes;
+    const updatedCategories =
+      categories === undefined ? product.categories : categories;
+    const updatedColors = colors === undefined ? product.colors : colors;
+
+    dispatch(
+      editProduct({
+        id: product.id,
+        name,
+        price,
+        colors: updatedColors,
+        sizes: updatedSizes,
+        categories: updatedCategories,
+      })
+    );
+    setIsExpanded(false);
+  };
+
   return (
     <>
       {isExpanded ? (
         <div className={styles.expanded_container}>
-          <ProductForm />
+          <ProductForm
+            handleSubmit={handleEditItem}
+            product={product}
+            submitButtonLabel="Save"
+          />
           <button
             className={styles.close_btn}
-            onClick={() => setIsExpanded(!isExpanded)}
+            onClick={() => setIsExpanded(false)}
           >
             X
           </button>
@@ -54,41 +79,6 @@ const ProductListItem = ({ product }) => {
         <CollapsedView />
       )}
     </>
-
-    /*<div className={styles.container}>
-      <div className={styles.img_container}>
-        <Image
-          src={`/images/products/${product.image}`}
-          alt={`${product.name}-image`}
-          objectFit="contain"
-          layout="fill"
-        />
-      </div>
-      <input
-        className={styles.input}
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <input
-        className={styles.input}
-        value={price}
-        onChange={(e) => handlePriceChange(e.target.value)}
-      />
-      <div className={styles.action_btn_container}>
-        <button
-          className={styles.save_btn}
-          onClick={() => dispatch(editProduct({ id: product.id, name, price }))}
-        >
-          Save
-        </button>
-        <button
-          className={styles.delete_btn}
-          onClick={() => dispatch(deleteProduct(product))}
-        >
-          Delete
-        </button>
-      </div>
-  </div>*/
   );
 };
 

@@ -3,10 +3,12 @@
   justify-content: space-between;
   align-items: center;
   text-align: center;
+  font-size: 1.2rem;
   width: 80%;
   max-width: 1000px;
   min-width: 400px;
   margin: auto;
+  border-bottom: 1px solid var(--accent-light);
 }
 
 .container > * {
@@ -16,17 +18,49 @@
 .img_container {
   position: relative;
   width: 100px;
+  max-width: 100px;
+  min-width: 100px;
   height: 100px;
+}
+
+.product_name {
+  word-wrap: break-word;
+  width: 150px;
+  text-align: left;
+  padding-left: 20px;
 }
 
 .quantity_container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
+  max-width: 80px;
+}
+
+.price_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  max-width: 120px;
+}
+
+.price_subtotal {
+  font-weight: bold;
 }
 
 .cart_btn {
+  padding: 2px 5px;
   width: 30px;
-  height: 30px;
+  max-width: 30px;
+  min-width: 30px;
+}
+
+.delete_btn_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  max-width: 40px;
 }

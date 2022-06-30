@@ -28,7 +28,7 @@ const AddProductPage = () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Add A Blindfold</h1>
-      <ProductForm handleSubmit={handleAddProduct} />
+      <ProductForm handleSubmit={handleAddProduct} submitButtonLabel="Add" />
     </div>
   );
 };

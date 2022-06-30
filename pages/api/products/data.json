@@ -58,17 +58,17 @@
   "images": ["bf1.jfif", "bf2.jpg", "bf3.jpg", "bf4.png", "bf5.png", "bf6.jpg"],
   "allSizes": ["XXS", "XS", "S", "M", "L", "XL", "XXL", "XXXL", "XXXXL"],
   "allColors": [
-    "Red",
-    "Orange",
-    "Yellow",
-    "Green",
-    "Cyan",
-    "Blue",
-    "Magenta",
-    "Purple",
-    "Pink",
-    "Black",
-    "White"
+    "red",
+    "orange",
+    "yellow",
+    "green",
+    "cyan",
+    "blue",
+    "magenta",
+    "purple",
+    "pink",
+    "black",
+    "white"
   ],
   "allCategories": ["men", "women", "kids"]
 }

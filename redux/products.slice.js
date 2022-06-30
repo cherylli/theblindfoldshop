@@ -22,6 +22,9 @@ const productsSlice = createSlice({
             ...product,
             name: action.payload.name,
             price: action.payload.price,
+            sizes: action.payload.sizes,
+            categories: action.payload.categories,
+            colors: action.payload.colors,
           };
         }
         return product;

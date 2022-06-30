@@ -20,10 +20,14 @@ const ValidationSchema = Yup.object().shape({
     .required('Required'),
 });
 
-const ProductForm = ({ handleSubmit }) => {
+const ProductForm = ({ handleSubmit, product, submitButtonLabel }) => {
   const [categories, setCategories] = useState([]);
   const [sizes, setSizes] = useState([]);
   const [colors, setColors] = useState([]);
+
+  const initialValues = product
+    ? { name: product.name, price: product.price }
+    : { name: '', price: 1 };
 
   useEffect(() => {
     const getAllCategoriesFromAPI = async () => {
@@ -40,7 +44,7 @@ const ProductForm = ({ handleSubmit }) => {
   return (
     <div className={styles.container}>
       <Formik
-        initialValues={{ name: '', price: 1 }}
+        initialValues={initialValues}
         validationSchema={ValidationSchema}
         onSubmit={(values) => {
           console.log(values);
@@ -95,6 +99,9 @@ const ProductForm = ({ handleSubmit }) => {
                 name="categories"
                 component={MultiSelectField}
                 options={categories}
+                defaultValue={
+                  product ? arrayToSelectOptions(product.categories) : []
+                }
               />
             </fieldset>
             <fieldset className={styles.fset}>
@@ -106,6 +113,9 @@ const ProductForm = ({ handleSubmit }) => {
                 name="colors"
                 component={MultiSelectField}
                 options={colors}
+                defaultValue={
+                  product ? arrayToSelectOptions(product.colors) : []
+                }
               />
             </fieldset>
             <fieldset className={styles.fset}>
@@ -117,11 +127,14 @@ const ProductForm = ({ handleSubmit }) => {
                 name="sizes"
                 component={MultiSelectField}
                 options={sizes}
+                defaultValue={
+                  product ? arrayToSelectOptions(product.sizes) : []
+                }
               />
             </fieldset>
 
             <button type="submit" className={styles.submit_btn}>
-              Add
+              {submitButtonLabel || 'Submit'}
             </button>
           </Form>
         )}

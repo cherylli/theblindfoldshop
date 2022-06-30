@@ -25,3 +25,7 @@
   margin-right: 50px;
   font-size: 1.5rem;
 }
+
+.nav_ul > li:hover {
+  color: var(--accent);
+}
