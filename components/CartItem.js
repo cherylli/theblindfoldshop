@@ -22,7 +22,7 @@ const CartItem = ({ product }) => {
         />
       </div>
       <div className={styles.product_name}>{product.name}</div>
-      <div className={styles.price_container}>{formatMoney(product.price)}</div>
+      <div className={styles.price}>{formatMoney(product.price)}</div>
       <div className={styles.quantity_container}>
         <button
           className={styles.cart_btn}
@@ -38,7 +38,7 @@ const CartItem = ({ product }) => {
           +
         </button>
       </div>
-      <div className={`${styles.price_container} ${styles.price_subtotal}`}>
+      <div className={styles.price_subtotal}>
         {formatMoney(product.price * product.quantity)}
       </div>
       <div className={styles.delete_btn_container}>

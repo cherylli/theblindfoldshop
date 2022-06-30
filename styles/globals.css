@@ -21,6 +21,8 @@ body {
   margin: 0;
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 16px;
+  background-color: var(--white);
+  color: var(--black);
 }
 
 a {

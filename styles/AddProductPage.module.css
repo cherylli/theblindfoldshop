@@ -13,3 +13,13 @@
   width: 400px;
   text-align: left;
 }
+
+@media screen and (max-width: 400px) {
+  .container {
+    width: 100%;
+  }
+  .title {
+    width: 100%;
+    text-align: center;
+  }
+}
