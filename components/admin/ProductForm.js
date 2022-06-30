@@ -47,7 +47,6 @@ const ProductForm = ({ handleSubmit, product, submitButtonLabel }) => {
         initialValues={initialValues}
         validationSchema={ValidationSchema}
         onSubmit={(values) => {
-          console.log(values);
           handleSubmit({
             name: values.name,
             price: values.price,
