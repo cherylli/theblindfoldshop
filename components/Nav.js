@@ -10,7 +10,7 @@ const Nav = () => {
         <Link href="/">
           <a>
             <Image
-              src="/images/logo.png"
+              src="/images/logo.svg"
               alt="logo"
               layout="fill"
               objectFit="contain"
@@ -19,7 +19,6 @@ const Nav = () => {
           </a>
         </Link>
       </div>
-      <div>{`<-- need new logo`} </div>
       <ul className={styles.nav_ul}>
         {isAdmin && (
           <>
