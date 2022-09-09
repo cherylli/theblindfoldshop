@@ -25,6 +25,7 @@ const productsSlice = createSlice({
             sizes: action.payload.sizes,
             categories: action.payload.categories,
             colors: action.payload.colors,
+            imgUrl: action.payload.imgUrl
           };
         }
         return product;

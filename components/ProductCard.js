@@ -9,18 +9,16 @@ const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
 
   const imagePath = isUsingLocalJsonData
-    ? `/images/products/${product.image}`
+    ? product.imgUrl
     : product.image.data.attributes.url;
 
   return (
     <div className={styles.container}>
       <div className={styles.product_name}>{product.name}</div>
       <div className={styles.img_container}>
-        <Image
+        <img className={styles.image}
           src={imagePath}
           alt={`${product.name}-image`}
-          objectFit="contain"
-          layout="fill"
         />
       </div>
 

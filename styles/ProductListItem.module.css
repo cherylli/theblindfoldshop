@@ -46,6 +46,12 @@
   min-width: 100px;
 }
 
+.image {
+  object-fit: contain;
+  height: 100px;
+  width: 100px;
+}
+
 .product_name {
   flex: 1;
   text-align: left;

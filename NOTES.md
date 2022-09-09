@@ -15,3 +15,6 @@ Using variables for media queries
 - Doesn't seem to be possible with the built in CSS modules
 - 1. [use Sass variables](https://stackoverflow.com/questions/57307576/css-modules-with-sass-variables-in-media-queries)
 - 2. [use styled components etc](https://gitlab.com/frontendmentor3/frontendmentor-space-travel/-/blob/master/styles/sizes.ts)
+
+UseRef -> innerRef
+

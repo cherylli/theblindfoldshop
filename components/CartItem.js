@@ -14,11 +14,9 @@ const CartItem = ({ product }) => {
   return (
     <div className={styles.container}>
       <div className={styles.img_container}>
-        <Image
-          src={`/images/products/${product.image}`}
+        <img className={styles.image}
+          src={product.imgUrl}
           alt={`${product.name}-image`}
-          objectFit="contain"
-          layout="fill"
         />
       </div>
       <div className={styles.product_name}>{product.name}</div>

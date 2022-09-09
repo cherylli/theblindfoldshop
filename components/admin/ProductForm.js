@@ -29,20 +29,13 @@ const ProductForm = ({ handleSubmit, product, submitButtonLabel }) => {
   const imgPreviewUrlRef = useRef(null);
   const setPreviewImage = () => setImageUrl(imgPreviewUrlRef.current.value)
 
-  const getImageUrl = (product) => {
-    return product.imgUrl?
-        product.imgUrl:
-        `/images/products/${product.image}`
-  }
-
   const initialValues = product
-    ? { name: product.name, price: product.price, imgUrl: getImageUrl(product)}
+    ? { name: product.name, price: product.price, imgUrl: product?.imgUrl}
     : { name: '', price: 1};
 
   //TODO:
-  // 1. include /images/prodcuts/ in data.product.image, so it works for both internal and external link
-  // 2. go through all the reference and update
-  // 3. get rid of getImageUrl function
+  // 1. maybe add a feature to show all local images to pick from
+  // 2. update imgUrl in state
 
   useEffect(() => {
     const getAllCategoriesFromAPI = async () => {
@@ -52,7 +45,7 @@ const ProductForm = ({ handleSubmit, product, submitButtonLabel }) => {
       setCategories(arrayToSelectOptions(allCategories));
       setSizes(arrayToSelectOptions(allSizes));
       setColors(arrayToSelectOptions(allColors));
-      if(product) setImageUrl(getImageUrl(product))
+      if(product && product.imgUrl) setImageUrl(product.imgUrl)
     };
     getAllCategoriesFromAPI();
   }, []);
@@ -69,7 +62,7 @@ const ProductForm = ({ handleSubmit, product, submitButtonLabel }) => {
             categories: values.categories,
             colors: values.colors,
             sizes: values.sizes,
-            imageUrl
+            imgUrl: imageUrl
           });
         }}
       >
