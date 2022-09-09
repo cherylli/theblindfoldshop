@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 import MultiSelectField from './MultiSelectField';
 import { arrayToSelectOptions } from '@/utils/arrayToSelectOptions';
 import { getAllCategories } from 'pages/api/products/properties/categories';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { getAllSizes } from 'pages/api/products/properties/sizes';
 import { getAllColors } from 'pages/api/products/properties/colors';
 
@@ -24,10 +24,25 @@ const ProductForm = ({ handleSubmit, product, submitButtonLabel }) => {
   const [categories, setCategories] = useState([]);
   const [sizes, setSizes] = useState([]);
   const [colors, setColors] = useState([]);
+  const [imageUrl, setImageUrl] = useState('')
+
+  const imgPreviewUrlRef = useRef(null);
+  const setPreviewImage = () => setImageUrl(imgPreviewUrlRef.current.value)
+
+  const getImageUrl = (product) => {
+    return product.imgUrl?
+        product.imgUrl:
+        `/images/products/${product.image}`
+  }
 
   const initialValues = product
-    ? { name: product.name, price: product.price }
-    : { name: '', price: 1 };
+    ? { name: product.name, price: product.price, imgUrl: getImageUrl(product)}
+    : { name: '', price: 1};
+
+  //TODO:
+  // 1. include /images/prodcuts/ in data.product.image, so it works for both internal and external link
+  // 2. go through all the reference and update
+  // 3. get rid of getImageUrl function
 
   useEffect(() => {
     const getAllCategoriesFromAPI = async () => {
@@ -37,6 +52,7 @@ const ProductForm = ({ handleSubmit, product, submitButtonLabel }) => {
       setCategories(arrayToSelectOptions(allCategories));
       setSizes(arrayToSelectOptions(allSizes));
       setColors(arrayToSelectOptions(allColors));
+      if(product) setImageUrl(getImageUrl(product))
     };
     getAllCategoriesFromAPI();
   }, []);
@@ -53,6 +69,7 @@ const ProductForm = ({ handleSubmit, product, submitButtonLabel }) => {
             categories: values.categories,
             colors: values.colors,
             sizes: values.sizes,
+            imageUrl
           });
         }}
       >
@@ -131,6 +148,26 @@ const ProductForm = ({ handleSubmit, product, submitButtonLabel }) => {
                 }
               />
             </fieldset>
+            <fieldset className={styles.fset}>
+              <label htmlFor="imgUrl" className={styles.input_label}>
+                Image URL
+              </label>
+              <div className={styles.input_with_button}>
+                <Field
+                    innerRef={imgPreviewUrlRef}
+                    id="imgUrl"
+                    name="imgUrl"
+                    className={styles.input_short}
+                    autoComplete="off"
+                />
+                <button type="button" onClick={setPreviewImage}>✅</button>
+              </div>
+
+              <p>Image Preview</p>
+              <div className={styles.img_preview_container}>
+                {imageUrl?<img className={styles.img_preview} src={imageUrl}/>:<p>no image</p>}
+              </div>
+            </fieldset>
 
             <button type="submit" className={styles.submit_btn}>
               {submitButtonLabel || 'Submit'}
@@ -138,6 +175,7 @@ const ProductForm = ({ handleSubmit, product, submitButtonLabel }) => {
           </Form>
         )}
       </Formik>
+
     </div>
   );
 };

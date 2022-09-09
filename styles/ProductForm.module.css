@@ -48,6 +48,41 @@
 .submit_btn {
   align-self: center;
   padding: 10px 20px;
+  margin-top: 20px;
+}
+
+.input_with_button>button {
+  width: 50px;
+  border: none;
+}
+.input_with_button>button:hover {
+  background-color: unset;
+  filter: contrast(100) sepia(1) saturate(100) hue-rotate(180deg);
+}
+
+
+.input_short {
+  border-radius: 5px;
+  border: 1px solid var(--light-gray);
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  width: 350px;
+}
+
+.img_preview_container {
+  height: 102px;
+  width: 102px;
+  border: 1px solid var(--light-gray);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.img_preview {
+  height: 100px;
+
 }
 
 @media screen and (max-width: 400px) {
